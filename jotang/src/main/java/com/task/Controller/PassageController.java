@@ -2,13 +2,16 @@ package com.task.Controller;
 
 import com.task.Service.PassageService;
 import com.task.mapper.PassageMapper;
+import com.task.pojo.PageBean;
 import com.task.pojo.Passage;
 import com.task.pojo.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Slf4j
@@ -19,10 +22,13 @@ public class PassageController {
 
     //查询文章
     @GetMapping("/passage")
-    public Result list(){
-        log.info("查询全部文章");
-        List<Passage> passageList=passageService.list();
-        return Result.success(passageList);
+    public Result page(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10") Integer pageSize,
+                       String author,String title,
+                       @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate begin,
+                       @DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate end){
+        PageBean pageBean=passageService.page(page,pageSize,author,title,begin,end);
+
+        return Result.success(pageBean);
     }
 
     //删除文章

@@ -29,4 +29,19 @@
         </set>
         where id=#{id}
     </update>
+    <select id="page" resultType="com.task.pojo.Passage">
+        select * from passage
+        <where>
+            <if test="author!=null and author!=''">
+                author=#{author}
+            </if>
+            <if test="title!=null and title!=''">
+               and title like #{title}
+            </if>
+            <if test="begin!=null and end!=null">
+                and creat_time between #{begin} and #{end}
+            </if>
+        </where>
+        order by create_time desc
+    </select>
 </mapper>
