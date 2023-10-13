@@ -33,7 +33,7 @@ public class PassageController {
 
     //删除文章
     @DeleteMapping("/passage/{id}")
-    public Result deleteById(Integer id){
+    public Result deleteById(@PathVariable Integer id){
         log.info("所删除的文章:{}",id);
         passageService.delete(id);
         return Result.success();
@@ -41,7 +41,7 @@ public class PassageController {
 
     //根据id查询位置
     @GetMapping("/passage/{id}")
-    public Result selectById(Integer id){
+    public Result selectById(@PathVariable Integer id){
         log.info("查询的文章是:{}",id);
         Passage passage=passageService.selectById(id);
         return Result.success(passage);

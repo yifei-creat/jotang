@@ -20,10 +20,7 @@
             <if test="content!=null">
                 content=#{content},
             </if>
-            <if test="create_time!=null">
-                create_time=#{createTime},
-            </if>
-            <if test="update_time!=null">
+            <if test="updateTime!=null">
                 update_time=#{updateTime}
             </if>
         </set>
