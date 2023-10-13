@@ -5,8 +5,8 @@
 <mapper namespace="com.task.mapper.PassageMapper">
 
     <insert id="add">
-        insert into jotang.passage(author, title, content)
-        values (#{author}, #{title}, #{content})
+        insert into jotang.passage(author, title, content,create_time,update_time)
+        values (#{author}, #{title}, #{content},#{createTime},#{updateTime})
     </insert>
     <update id="update">
         update jotang.passage
@@ -20,10 +20,7 @@
             <if test="content!=null">
                 content=#{content},
             </if>
-            <if test="create_time!=null">
-                create_time=#{createTime},
-            </if>
-            <if test="update_time!=null">
+            <if test="updateTime!=null">
                 update_time=#{updateTime}
             </if>
         </set>

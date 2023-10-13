@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 public class PassageServiceImpl implements PassageService {
     @Autowired
-    PassageMapper passageMapper;
+    private PassageMapper passageMapper;
 
 
     //删除文章
