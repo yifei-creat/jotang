@@ -13,7 +13,7 @@ public interface PassageService {
     //删除文章
     void delete(Integer id);
 
-    //根据id删除文章
+    //根据id查询文章
     Passage selectById(Integer id);
 
     //增加文章
