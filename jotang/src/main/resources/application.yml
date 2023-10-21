@@ -20,6 +20,6 @@ mybatis:
 aliyun:
   oss:
     endpoint: https://oss-cn-heyuan.aliyuncs.com
-    accessKeyId: LTAI5tN9TxMKvY1cQLrqt6zy
-    accessKeySecret: oJayvGwQLLT5bhan6akJTdCMAqKCyX
+    accessKeyId: LTAI5tDZBbDu6vi1jiUUc51k
+    accessKeySecret: RmT40hGpiwhVJ5l2NmWfbyOlLSvIE0
     bucketName: jotang

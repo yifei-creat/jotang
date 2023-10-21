@@ -27,4 +27,6 @@ public interface PassageMapper {
 
     //修改文章
     void update(Passage passage);
+
+
 }

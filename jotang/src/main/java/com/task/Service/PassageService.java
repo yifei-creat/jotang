@@ -23,4 +23,6 @@ public interface PassageService {
     void update(Passage passage);
     //分页查询
     PageBean page(Integer page, Integer pageSize, String author,String title, LocalDate begin, LocalDate end);
+
+
 }

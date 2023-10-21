@@ -60,4 +60,6 @@ public class PassageServiceImpl implements PassageService {
         PageBean pageBean=new PageBean(p.getTotal(),p.getResult());
         return pageBean;
     }
+
+
 }
