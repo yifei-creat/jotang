@@ -23,7 +23,9 @@ public class JwtUtils {
         return jwt;
     }
 
-
+    /*
+    解析JWT令牌
+     */
     public static Claims parseJWT(String jwt){
         Claims claims = Jwts.parser()
                 .setSigningKey(signKey)//设置解析的JWT的密钥
